@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+
+<meta name = "vewport" content = "width=device-width,initial-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible"content="ie=ege">
+<title>5</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="v-on指令" v-on:click="doIT">
+        <input type="button" value="v-on简写" @dblclick="doIT">
+        <h2 @click="changeStr">{{action}}{{say}}</h2>
+        <h2 @click="show('yes')">{{say}}</h2>
+        <h2 @click="show($event,123)">{{say}}</h2>
+    </div>
+        <!-- 开发环境版本，包含了有帮助的命令警告-->
+        <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    say:"hello",
+                    name:"li",
+                    action:"动作"
+                },
+                methods:{
+                    doIT:function(){
+                        alert("Do IT");
+                    },
+                    changeStr:function(){
+                        console.log(this.say);
+                        this.say+=" "+this.name;
+                    },
+                    show:function(ex,value){
+                        console.log(ex,value);
+                        alert(value);
+                    }
+
+                }
+            })
+        </script>
+</body>
+</html>
