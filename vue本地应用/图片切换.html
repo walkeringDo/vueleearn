@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+
+    <meta name = "vewport" content = "width=device-width,initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"content="ie=ege">
+    <title>5</title>
+    </head>
+    <body>
+        <div id="mask">
+            <button @click="left" v-show="isleft">《==</button>
+            <button @click="right" v-show="isright">==》</button>
+            <p></p>
+            <img :src="arr[index]">
+        </div>
+            <!-- 开发环境版本，包含了有帮助的命令警告-->
+            <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var app = new Vue({
+                    el:"#mask",
+                    data:{
+                        arr:[
+                            "./图片/1.jpg",
+                            "./图片/2.jpg",
+                            "./图片/3.jpg",
+                            "./图片/4.jpg",
+                            "./图片/5.jpg",
+                            "./图片/6.jpg",
+                            "./图片/7.jpg",
+                            "./图片/8.jpg",
+                            "./图片/9.jpg",
+                        ],
+                        index:0,
+                        isleft:true,
+                        isright:true,
+                    },
+                    methods: {
+                        left:function(){
+                            this.index++;
+                            if(this.index==this.arr.length)
+                            {
+                                this.isleft=false;
+                                if(this.index!=0)
+                                {
+                                    this.isright= true;
+                                }
+                                
+                            }
+                        },
+                        right:function(){
+                            this.index--;
+                            if(this.index==0)
+                            {
+                                this.isright= false;
+                                if(this.index!= this.arr.length)
+                                {
+                                    this.isleft=true;
+                                }
+                            }
+                        }
+                    },
+                })
+            </script>
+    </body>
+</html>

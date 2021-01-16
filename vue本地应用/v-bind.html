@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+
+    <meta name = "vewport" content = "width=device-width,initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"content="ie=ege">
+    <title>5</title>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="ishow">点击</button>
+            <img v-bind:src="srcvalue" v-show="show">
+            <button @click="setagemax">设置大岁数</button>
+            <button @click="setagemin">设置小岁数</button>
+        </div>
+            <!-- 开发环境版本，包含了有帮助的命令警告-->
+            <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var app = new Vue({
+                    el:"#app",
+                    data:{
+                        srcvalue:"http://www.itheima.com/images/logo.png",
+                        age:15,
+                        show:true,
+                    },
+                    methods:{
+                        ishow:function(){
+                            if(this.age>16){
+                                this.show=true;
+                            }
+                            else{
+                                alert(this.age +"< 16");
+                                this.show=false;
+                            }
+                        },
+                        setagemax:function(){
+                            this.age=18;
+                        },
+                        setagemin:function(){
+                            this.age=15;
+                        }
+                        
+                    }
+                })
+            </script>
+    </body>
+</html>
