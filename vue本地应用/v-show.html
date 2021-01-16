@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+
+    <meta name = "vewport" content = "width=device-width,initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"content="ie=ege">
+    <title>5</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="button" value="切换显示" @click="isshow"/>
+            <img v-show="show" src="http://www.itheima.com/images/logo.png">
+            <button @click="add">+</button>
+            <span>{{age}}</span>
+            <button @click="sub">-</button>
+            <img v-show="age>=16" src="http://www.itheima.com/images/logo.png">
+        </div>
+            <!-- 开发环境版本，包含了有帮助的命令警告-->
+            <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var app = new Vue({
+                    el:"#app",
+                    data:{
+                        show:true,
+                        age:16,
+                    },
+                    methods:{
+                        isshow:function() {
+                            this.show = !this.show;  
+                        },
+                        add:function(){
+                            this.age++;
+                        },
+                        sub:function(){
+                            this.age--;
+                        }
+                    },
+                })
+            </script>
+    </body>
+</html>
