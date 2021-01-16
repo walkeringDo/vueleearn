@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+
+    <meta name = "vewport" content = "width=device-width,initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible"content="ie=ege">
+    <title>5</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(item, index) in arr" :key="index">
+                    {{index+1}}:{{item}}
+                </li>
+            </ul>
+        </div>
+        <!-- 开发环境版本，包含了有帮助的命令警告-->
+            <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var app = new Vue({
+                    el:"#app",
+                    data:{
+                        arr:["a","b","c"],
+                    },
+                    methods: {
+                    },
+                })
+            </script>
+    </body>
+</html>

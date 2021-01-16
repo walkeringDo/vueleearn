@@ -15,6 +15,11 @@
         <h2 @click="changeStr">{{action}}{{say}}</h2>
         <h2 @click="show('yes')">{{say}}</h2>
         <h2 @click="show($event,123)">{{say}}</h2>
+  
+        <!--自定义参数-->
+        <input type ="button" value="点击" @click="testfunc(666,'hello!')">
+        <!--事件修饰符-->
+        <input type="text" @keyup.enter="doIT" >
     </div>
         <!-- 开发环境版本，包含了有帮助的命令警告-->
         <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -37,8 +42,10 @@
                     show:function(ex,value){
                         console.log(ex,value);
                         alert(value);
-                    }
-
+                    },
+                    testfunc:function(p1,p2){
+                        alert(p1+p2);
+                    },
                 }
             })
         </script>
