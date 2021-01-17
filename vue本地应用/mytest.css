@@ -1,0 +1,15 @@
+body{
+    background-color:gray;/*设置背景色*/
+}
+
+#h1{/*ID选择器,名称唯一，不可重复*/
+    color:white;
+   /* background-color: darkorange;*/
+    font-family: "微软雅黑,sans-serif";
+    font-size: 48px;
+    font-weight: 500;
+    width:400px;
+    height: 100px;
+    text-shadow: #f03740 -1px -3px,#2addfd 3px 0px;/*抖音字体效果*/
+}
+input{width: 200px;}
